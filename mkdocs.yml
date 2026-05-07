@@ -1,0 +1,11 @@
+site_name: AI Systems Observatory
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Attention: attention.md
+  - Naive RAG Failures: naive-rag-failures.md
+  - FiD: fid.md
+  - GraphRAG: graph-rag.md
