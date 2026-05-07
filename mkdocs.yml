@@ -1,11 +1,23 @@
 site_name: AI Systems Observatory
+site_description: Retrieval systems, GraphRAG, FiD, context engineering, and AI architecture notes
 
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
 
 nav:
   - Home: index.md
-  - Attention: attention.md
-  - Naive RAG Failures: naive-rag-failures.md
-  - FiD: fid.md
-  - GraphRAG: graph-rag.md
+  - Attention:
+      - Overview: attention.md
+  - RAG:
+      - Naive RAG Failures: naive-rag-failures.md
+      - FiD: fid.md
+      - GraphRAG: graph-rag.md
