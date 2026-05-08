@@ -1,0 +1,839 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Retrieval systems, GraphRAG, FiD, context engineering, and AI architecture notes">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Study plan - AI Systems Observatory</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-8020-rule-for-ai-systems-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Systems Observatory" class="md-header__button md-logo" aria-label="AI Systems Observatory" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Systems Observatory
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Study plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../attention/" class="md-tabs__link">
+          
+  
+  
+  Attention
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../naive-rag-failures/" class="md-tabs__link">
+          
+  
+  
+  RAG
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Systems Observatory" class="md-nav__button md-logo" aria-label="AI Systems Observatory" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Systems Observatory
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Attention
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RAG
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../naive-rag-failures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naive RAG Failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GraphRAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Your goal is not:</p>
+<blockquote>
+<p>encyclopedic coverage.</p>
+</blockquote>
+<p>Your goal is:</p>
+<blockquote>
+<p>architectural fluency.</p>
+</blockquote>
+<p>That means for every topic, you only need to master a few <strong>high-leverage mental models</strong> and a few <strong>critical mechanisms</strong>.</p>
+<p>Think of it this way:</p>
+<ul>
+<li>Researchers need exhaustive depth.</li>
+<li>Engineers need implementation depth.</li>
+<li>AI PM / AI Architect profiles need <strong>systems-level depth</strong>.</li>
+</ul>
+<p>That is a different optimization function.</p>
+<hr />
+<h1 id="the-8020-rule-for-ai-systems-learning">The 80/20 Rule for AI Systems Learning</h1>
+<p>For each topic, focus on 4 things only:</p>
+<ol>
+<li><strong>What problem does this solve?</strong></li>
+<li><strong>Why existing systems fail?</strong></li>
+<li><strong>What architectural mechanism fixes it?</strong></li>
+<li><strong>What tradeoffs does it introduce?</strong></li>
+</ol>
+<p>If you can answer those 4 clearly, you are already ahead of most people posting about AI online.</p>
+<hr />
+<h1 id="what-you-actually-need-to-master">What You Actually Need to Master</h1>
+<p>Here’s the compressed “must-know core” for each topic.</p>
+<hr />
+<h1 id="1-attention-mechanism">1. Attention Mechanism</h1>
+<p>Do NOT study:</p>
+<ul>
+<li>every transformer variant,</li>
+<li>advanced tensor math,</li>
+<li>research-level derivations,</li>
+<li>obscure attention optimizations.</li>
+</ul>
+<p>Master these instead:</p>
+<h2 id="critical-concepts">Critical Concepts</h2>
+<ul>
+<li>Tokens as information units</li>
+<li>Query / Key / Value intuition</li>
+<li>Self-attention</li>
+<li>Cross-attention</li>
+<li>Context relevance scoring</li>
+<li>Why transformers forget long context</li>
+<li>Attention dilution</li>
+<li>Quadratic scaling problem</li>
+<li>Why retrieval exists at all</li>
+</ul>
+<p>This single idea is the heart of attention:</p>
+<p>\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V</p>
+<p>You need conceptual intuition, not matrix algebra mastery.</p>
+<hr />
+<h1 id="2-fid-fid-kg">2. FiD / FiD-KG</h1>
+<p>Do NOT study:</p>
+<ul>
+<li>every benchmark paper,</li>
+<li>every encoder-decoder implementation detail,</li>
+<li>every variant architecture.</li>
+</ul>
+<p>Master:</p>
+<ul>
+<li>early fusion vs late fusion</li>
+<li>why concatenating chunks fails</li>
+<li>document-wise encoding</li>
+<li>evidence aggregation</li>
+<li>retrieval robustness</li>
+<li>multi-document reasoning</li>
+<li>why FiD improves noisy retrieval handling</li>
+</ul>
+<p>Critical insight:</p>
+<blockquote>
+<p>FiD separates retrieval representation from final reasoning.</p>
+</blockquote>
+<p>That is the key.</p>
+<hr />
+<h1 id="3-graphrag">3. GraphRAG</h1>
+<p>Do NOT get lost in:</p>
+<ul>
+<li>graph database administration,</li>
+<li>Cypher query mastery,</li>
+<li>graph theory proofs.</li>
+</ul>
+<p>Master:</p>
+<ul>
+<li>entities and relationships</li>
+<li>multi-hop retrieval</li>
+<li>neighborhood expansion</li>
+<li>path traversal</li>
+<li>relationship-aware retrieval</li>
+<li>graph explainability</li>
+<li>hybrid graph + vector retrieval</li>
+</ul>
+<p>Critical insight:</p>
+<blockquote>
+<p>Vector retrieval finds similarity.
+Graph retrieval finds relationships.</p>
+</blockquote>
+<p>That distinction matters enormously.</p>
+<hr />
+<h1 id="4-knowledge-context-domain-graphs">4. Knowledge / Context / Domain Graphs</h1>
+<p>Do NOT obsess over:</p>
+<ul>
+<li>ontology engineering,</li>
+<li>RDF standards,</li>
+<li>semantic web rabbit holes.</li>
+</ul>
+<p>Master:</p>
+<ul>
+<li>structured knowledge representation</li>
+<li>entity linking</li>
+<li>domain grounding</li>
+<li>contextual memory</li>
+<li>dynamic vs static knowledge</li>
+<li>hierarchical relationships</li>
+</ul>
+<p>Critical insight:</p>
+<blockquote>
+<p>These graphs exist to improve retrieval quality and reasoning structure.</p>
+</blockquote>
+<p>Not to look academically impressive.</p>
+<hr />
+<h1 id="5-agentic-rag">5. Agentic RAG</h1>
+<p>Avoid:</p>
+<ul>
+<li>framework hype,</li>
+<li>“100 agents talking to each other” demos,</li>
+<li>endless orchestration abstractions.</li>
+</ul>
+<p>Master:</p>
+<ul>
+<li>planning</li>
+<li>query decomposition</li>
+<li>tool selection</li>
+<li>iterative retrieval</li>
+<li>memory</li>
+<li>execution loops</li>
+<li>reflection/retry mechanisms</li>
+</ul>
+<p>Critical insight:</p>
+<blockquote>
+<p>Agentic systems are fundamentally decision loops around retrieval + tools.</p>
+</blockquote>
+<hr />
+<h1 id="6-vectorless-rag">6. Vectorless RAG</h1>
+<p>Do NOT deep dive yet.</p>
+<p>Just understand:</p>
+<ul>
+<li>why embeddings lose structure</li>
+<li>token/page indexing ideas</li>
+<li>deterministic retrieval approaches</li>
+<li>lexical + structural retrieval</li>
+<li>when vectors fail</li>
+</ul>
+<p>That’s enough for now.</p>
+<hr />
+<h1 id="your-real-objective">Your Real Objective</h1>
+<p>You are NOT building a university curriculum.</p>
+<p>You are building:</p>
+<ul>
+<li>architectural intuition,</li>
+<li>product intuition,</li>
+<li>failure analysis capability,</li>
+<li>systems thinking.</li>
+</ul>
+<p>That means you should constantly ask:</p>
+<blockquote>
+<p>“Why does this architecture exist?”</p>
+</blockquote>
+<p>and</p>
+<blockquote>
+<p>“What failure mode is it trying to solve?”</p>
+</blockquote>
+<p>That question alone will accelerate your learning massively.</p>
+<hr />
+<h1 id="the-big-mistake-smart-people-make">The Big Mistake Smart People Make</h1>
+<p>They learn topics horizontally.</p>
+<p>Example:</p>
+<ul>
+<li>GraphRAG</li>
+<li>Agentic RAG</li>
+<li>Memory</li>
+<li>FiD</li>
+<li>Knowledge Graphs</li>
+<li>Attention</li>
+<li>MCP</li>
+<li>Context Engineering</li>
+<li>Multi-agent</li>
+<li>Long context</li>
+</ul>
+<p>…all simultaneously.</p>
+<p>Result:</p>
+<ul>
+<li>shallow understanding,</li>
+<li>buzzword accumulation,</li>
+<li>no synthesis.</li>
+</ul>
+<p>Instead, you should learn vertically.</p>
+<p>Example:</p>
+<h3 id="retrieval-failure-stack">Retrieval Failure Stack</h3>
+<ol>
+<li>Why transformers fail long context</li>
+<li>Why retrieval helps</li>
+<li>Why vector retrieval fails</li>
+<li>Why reranking exists</li>
+<li>Why FiD exists</li>
+<li>Why GraphRAG exists</li>
+<li>Why agentic retrieval exists</li>
+</ol>
+<p>That becomes a coherent systems narrative.</p>
+<p>Now you’re thinking like an architect.</p>
+<hr />
+<h1 id="the-most-valuable-skill-you-can-build">The Most Valuable Skill You Can Build</h1>
+<p>Not “knowing technologies.”</p>
+<p>But being able to explain:</p>
+<ul>
+<li>failure modes,</li>
+<li>architectural tradeoffs,</li>
+<li>retrieval strategies,</li>
+<li>reliability implications,</li>
+<li>reasoning limitations,</li>
+<li>scalability decisions.</li>
+</ul>
+<p>That is the bridge between:</p>
+<ul>
+<li>engineer,</li>
+<li>architect,</li>
+<li>AI PM,</li>
+<li>AI platform strategist.</li>
+</ul>
+<p>And frankly, very few people can currently do this well.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
